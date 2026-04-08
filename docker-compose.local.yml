@@ -1,0 +1,36 @@
+services:
+
+  db:
+    image: mariadb
+    container_name: kctennisblast_db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wpuser
+      MARIADB_PASSWORD: wppassword
+      MARIADB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  wordpress:
+    image: wordpress:latest
+    container_name: kctennisblast_wp
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppassword
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wordpress_data:/var/www/html
+      - ./wp-content/themes/kctennisblast:/var/www/html/wp-content/themes/kctennisblast
+    depends_on:
+      - db
+    working_dir: /var/www/html
+
+volumes:
+  db_data:
