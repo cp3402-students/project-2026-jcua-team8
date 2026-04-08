@@ -10,24 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy theme/plugins/uploads to Lightsail
+      - name: Copy theme, plugins and uploads to Lightsail
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.LIGHTSAIL_HOST }}
+          host: ${{ secrets.STATIC_IP }}
           username: bitnami
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           source: |
             wp-content/themes/*
             wp-content/plugins/*
             wp-content/uploads/*
-          target: "/opt/bitnami/wordpress/wp-content/"
+          target: /opt/bitnami/wordpress/wp-content/
 
-      - name: Deploy database to Lightsail
-        run: |
-          scp -i ${{ secrets.LIGHTSAIL_SSH_KEY }} database/latest.sql bitnami@${{ secrets.LIGHTSAIL_HOST }}:/tmp/latest.sql
-          ssh -i ${{ secrets.LIGHTSAIL_SSH_KEY }} bitnami@${{ secrets.LIGHTSAIL_HOST }} "
-            mysql -u bitnami -p\$BITNAMI_WORDPRESS_PASSWORD bitnami_wordpress < /tmp/latest.sql
-          "
+      - name: Upload database export
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.STATIC_IP }}
+          username: bitnami
+          key: ${{ secrets.SSH_KEY }}
+          source: database/latest.sql
+          target: /tmp/
+
+      - name: Import database into Lightsail WordPress
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.STATIC_IP }}
+          username: bitnami
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            mysql -u bitnami -p${{ secrets.BITNAMI_WORDPRESS_PASSWORD }} bitnami_wordpress < /tmp/database/latest.sql
+            rm /tmp/database/latest.sql
