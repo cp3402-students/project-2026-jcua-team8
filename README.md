@@ -43,10 +43,10 @@ All project documentation is written in Markdown and located in the `/Documentat
 ## Project Links
 
 - **Production Site (Live):**  
-  todo link here
+  http://13.55.92.119/
 
 - **Staging Site (Development):**  
-  todo link here
+  http://13.236.72.97/
 
 - **GitHub Repository:**  
   https://github.com/cp3402-students/project-2026-jcua-team8
