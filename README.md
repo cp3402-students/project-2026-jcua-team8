@@ -51,8 +51,12 @@ All project documentation is written in Markdown and located in the `/Documentat
 - **GitHub Repository:**  
   https://github.com/cp3402-students/project-2026-jcua-team8
 
+- **Trello Board:**  
+  https://trello.com/b/4eukt5dw/group8-project-notes
 
 ## Repository Structure (Important Files)
+
+```text
 major-staging-versions/
 ├── v1/
 ├── v2/
@@ -70,4 +74,12 @@ Documentation/
 
 wp-content/
 └── themes/
-    └── picostrap-child/   # Active custom theme (main development work)
+    └── picostrap5-master   # Picostrap5 starter theme files
+```
+
+## Team & Collaboration
+
+- Version control managed via GitHub
+- Project management via Trello
+- Communication via Discord (Primary) and Slack
+
