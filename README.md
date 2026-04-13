@@ -25,3 +25,27 @@ Our team delivered the following:
 
 This project demonstrates both the final product and the professional development practices used to achieve it, including teamwork, communication, version control, and deployment strategies.
 
+
+## Documentation
+
+All project documentation is written in Markdown and located in the `/Documentation` folder.
+
+- [Deployment Guide](Documentation/deployment.md)  
+  Explains how to set up the local environment, manage changes, test, and deploy the site.
+
+- [Theme Documentation](Documentation/theme.md)  
+  Describes the custom theme structure, features, and development decisions.
+
+- [Site Management Guide](Documentation/site.md)  
+  Explains how to manage content, pages, and plugins within WordPress.
+
+## Project Links
+
+- **Production Site (Live):**  
+  todo link here
+
+- **Staging Site (Development):**  
+  todo link here
+
+- **GitHub Repository:**  
+  https://github.com/cp3402-students/project-2026-jcua-team8
