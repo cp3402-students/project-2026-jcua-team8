@@ -39,6 +39,7 @@ All project documentation is written in Markdown and located in the `/Documentat
 - [Site Management Guide](Documentation/site.md)  
   Explains how to manage content, pages, and plugins within WordPress.
 
+
 ## Project Links
 
 - **Production Site (Live):**  
@@ -49,3 +50,24 @@ All project documentation is written in Markdown and located in the `/Documentat
 
 - **GitHub Repository:**  
   https://github.com/cp3402-students/project-2026-jcua-team8
+
+
+## Repository Structure (Important Files)
+major-staging-versions/
+├── v1/
+├── v2/
+├── v3/
+├── v4/
+└── ...                # Each folder = snapshot of a major staging version
+
+major-production-version/
+└── final/             # Final production-ready version of the website
+
+Documentation/
+├── deployment.md      # Setup and deployment workflow
+├── theme.md           # Theme structure and design decisions
+└── site.md            # WordPress content management guide
+
+wp-content/
+└── themes/
+    └── picostrap-child/   # Active custom theme (main development work)
