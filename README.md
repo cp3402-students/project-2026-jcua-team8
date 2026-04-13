@@ -1,8 +1,8 @@
 # project-2026-jcua-team8
 project-2026-jcua-team8 created by GitHub Classroom
-## Purpose
+## Overview and Purpose
 
-This project involved the design, development, deployment, and documentation of a professional WordPress website for a real client, Kalynda Chase Tennis Blast. The goal was to improve the organisation’s outdated website by enhancing user experience, streamlining the booking process, and effectively showcasing coaching services and staff expertise.
+This project involved the design, development, deployment, and documentation of a professional WordPress website for a real client, Kalynda Chase Tennis Blast. The goal was to improve the organisation’s outdated website by enhancing user experience, adding new pages like social events or pro shop, streamlining the booking process, and effectively showcasing coaching services and staff expertise.
 
 This repository contains our team’s custom WordPress theme along with all supporting project documentation. It provides a complete record of our development progress and version control. The repository supports collaboration by tracking individual contributions, commits, and project progress through GitHub.
 
